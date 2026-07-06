@@ -131,6 +131,9 @@ with gr.Blocks(title="Weather & Emergency Alert") as demo:
 
 if __name__ == "__main__":
     demo.launch(
-    server_name="0.0.0.0",
-    server_port=port
+    server_port=port,
+    server_name="127.0.0.1",
+    show_error=True,
+    quiet=False,
+    share=True
     )
