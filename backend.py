@@ -12,13 +12,13 @@ from brevo_python.rest import ApiException
 
 load_dotenv()
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY")
 BREVO_API_KEY = os.getenv("BREVO_API_KEY")
 ALERT_SENDER_EMAIL = os.getenv("ALERT_SENDER_EMAIL", "noreply@example.com")
 ALERT_SENDER_NAME = os.getenv("ALERT_SENDER_NAME", "Weather Alert System")
 
-llm = LLM(model="gemini/gemini-2.5-flash", api_key=GEMINI_API_KEY)
+llm = LLM(model="groq/llama-3.3-70b-versatile", api_key=GROQ_API_KEY)
 
 brevo_config = brevo_python.Configuration()
 brevo_config.api_key["api-key"] = BREVO_API_KEY
