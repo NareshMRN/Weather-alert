@@ -130,9 +130,10 @@ with gr.Blocks(title="Weather & Emergency Alert") as demo:
     )
 
 if __name__ == "__main__":
+    print(f"Starting Gradio on 0.0.0.0:{port}")
     demo.launch(
     server_port=port,
-    server_name="127.0.0.1",
+    server_name="0.0.0.0",
     show_error=True,
     quiet=False,
     share=True
