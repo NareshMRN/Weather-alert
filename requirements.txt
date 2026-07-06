@@ -8,3 +8,6 @@ gradio
 groq
 crewai[litellm]
 litellm
+litellm==1.74.9
+groq==0.31.0
+openai
