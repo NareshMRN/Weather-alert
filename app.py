@@ -1,13 +1,12 @@
 """
 app.py — Weather & Emergency Alert frontend (Gradio).
 
-This is the complete, working frontend. Requires backend.py in the same
-folder. Run with:
-    pip install gradio
-    python app.py
 """
 import gradio as gr
 from backend import check_weather_and_send_alert
+import os
+
+port = int(os.environ.get("PORT", 7860))
 
 # JS that runs in the user's browser and triggers the real, native
 # "Allow this site to know your location?" permission prompt.
@@ -131,4 +130,7 @@ with gr.Blocks(title="Weather & Emergency Alert") as demo:
     )
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(
+    server_name="0.0.0.0",
+    server_port=port
+    )
