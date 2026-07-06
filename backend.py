@@ -18,7 +18,11 @@ BREVO_API_KEY = os.getenv("BREVO_API_KEY")
 ALERT_SENDER_EMAIL = os.getenv("ALERT_SENDER_EMAIL", "noreply@example.com")
 ALERT_SENDER_NAME = os.getenv("ALERT_SENDER_NAME", "Weather Alert System")
 
-llm = LLM(model="groq/llama-3.3-70b-versatile", api_key=GROQ_API_KEY)
+llm = LLM(
+    model="openai/llama-3.3-70b-versatile",
+    api_key=GROQ_API_KEY,
+    base_url="https://api.groq.com/openai/v1"
+)
 
 brevo_config = brevo_python.Configuration()
 brevo_config.api_key["api-key"] = BREVO_API_KEY
