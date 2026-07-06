@@ -6,3 +6,5 @@ crewai[google-genai]
 google-generativeai
 gradio
 groq
+crewai[litellm]
+litellm
